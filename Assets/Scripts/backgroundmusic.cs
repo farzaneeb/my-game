@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class backgroundmusic : MonoBehaviour
 {
-     public  AudioSource BackgroundMusic;
-    // Start is called before the first frame update
+    public Renderer meshRenderer;
+    public float speed = 0.1f;
     void Start()
     {
-        BackgroundMusic.Play();
+        
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+
+      meshRenderer.material.mainTextureOffset += new Vector2(0, speed * Time.deltaTime);
+
     }
 }
